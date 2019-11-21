@@ -97,7 +97,57 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+/* Image Mask*/
 
+.p-introduction__illustration {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.p-introduction__illustration[data-name="cominca"] {
+    right: 1.6rem;
+    bottom: 12rem;
+}
+
+.p-introduction__illustration[data-name="cominca"] img {
+    width: 385px;
+}
+
+.p-introduction__illustration::before {
+    content: '';
+    width: 385px;
+    height: 236px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    flex-shrink: 0;
+    background: url(../img/image-draw/mask@1x.png) 0 0 no-repeat;
+    background-size: cover;
+}
+.p-introduction__illustration[data-name="flower-2"] {
+    right: 0;
+    bottom: 25rem;
+}
+.p-introduction__illustration[data-name="flower-2"] img {
+    width: 277px;
+}
+.p-introduction__illustration.is-animated::before {
+    animation: mask-image 0.7s steps(58) forwards;
+}
+
+@keyframes mask-image {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -22330px 0;
+    }
+}
 
 
 
